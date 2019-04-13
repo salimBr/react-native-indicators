@@ -56,7 +56,7 @@ export default class BarIndicator extends PureComponent {
     let
       width  = Math.floor(size / 5),
       height = Math.floor(size / 2),
-      radius = Math.floor(size / 2),
+      radius = Math.ceil(width / 2),
       borderRadius = 0;
 
     let containerStyle = {
@@ -69,8 +69,8 @@ export default class BarIndicator extends PureComponent {
       width,
       height,
       backgroundColor,
-      borderTopLeftRadius: 0,
-      borderTopRightRadius: 0,
+      borderTopLeftRadius: borderRadius,
+      borderTopRightRadius: borderRadius,
       transform: [{
         translateY: progress.interpolate({
           inputRange,
@@ -83,8 +83,8 @@ export default class BarIndicator extends PureComponent {
       width,
       height,
       backgroundColor,
-      borderBottomLeftRadius: 0,
-      borderBottomRightRadius: 0,
+      borderBottomLeftRadius: borderRadius,
+      borderBottomRightRadius: borderRadius,
       transform: [{
         translateY: progress.interpolate({
           inputRange,
