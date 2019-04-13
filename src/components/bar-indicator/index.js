@@ -56,7 +56,7 @@ export default class BarIndicator extends PureComponent {
     let
       width  = Math.floor(size / 5),
       height = Math.floor(size / 2),
-      radius = Math.ceil(width / 2);
+      radius = 0;
 
     let containerStyle = {
       height: size,
